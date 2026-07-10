@@ -98,18 +98,45 @@
                 inset 0 0 10px rgba(255,255,255,.03);
         }
 
-        hr{
-            border:none;
-            height:1px;
-            background:#333;
-            margin:60px 0 30px 0;
-        }
+       hr{
+    border:none;
+    height:1px;
+    background:#333;
+    margin:60px 0 30px 0;
+}
 
-        .footer{
-            color:#777;
-            letter-spacing:2px;
-            padding-bottom:40px;
-        }
+.btn{
+    background:#111;
+    color:#d48806;
+    border:1px solid #d48806;
+    padding:15px 30px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+
+    box-shadow:
+        0 0 15px rgba(212,136,6,.25),
+        inset 0 0 10px rgba(255,255,255,.03);
+
+    transition:all 0.3s ease;
+}
+
+.btn:hover{
+    background:#d48806;
+    color:black;
+    transform:scale(1.05);
+
+    box-shadow:
+        0 0 25px rgba(212,136,6,.5);
+}
+
+.footer{
+    color:#777;
+    letter-spacing:2px;
+    padding-bottom:40px;
+}
+``
 
     </style>
 
@@ -133,11 +160,20 @@
             overcome contributes to the pursuit of mastery.
         </p>
 
-        <p class="journey">
-            The pursuit of mastery is never finished.
-        </p>
+       <p class="journey">
+    The pursuit of mastery is never finished.
+</p>
 
-        <h2>The Five Pillars</h2>
+<br>
+
+<button class="btn"
+        onclick="window.location.href='projects.html'">
+        ENTER THE ARCHIVE
+</button>
+
+<br><br>
+
+<h2>The Five Pillars</h2>
 
         <div class="pillar">
             <h3>Honor</h3>
