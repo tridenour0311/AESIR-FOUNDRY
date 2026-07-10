@@ -8,11 +8,11 @@
 <style>
 
 body{
-    background:black;
     color:white;
     text-align:center;
     font-family:Arial, sans-serif;
     padding:50px;
+    margin:0;
 
     background:
         radial-gradient(circle at 0% 50%,
@@ -67,23 +67,36 @@ p{
 }
 
 .oars-image img{
-    width:160px;
+    width:180px;
     max-width:50%;
-    opacity:.75;
+    height:auto;
+    opacity:.85;
 
     filter:
         drop-shadow(0 0 10px rgba(212,136,6,.25))
         drop-shadow(0 0 20px rgba(255,80,0,.15));
 }
 
-a{
+.return-button{
+    display:inline-block;
+    margin-top:25px;
+    padding:14px 28px;
+    border:1px solid #d48806;
+    border-radius:10px;
     color:#d48806;
     text-decoration:none;
     font-weight:bold;
+
+    box-shadow:
+        0 0 15px rgba(212,136,6,.20),
+        inset 0 0 10px rgba(255,255,255,.03);
+
+    transition:all .3s ease;
 }
 
-a:hover{
-    color:white;
+.return-button:hover{
+    background:#d48806;
+    color:black;
 }
 
 </style>
@@ -103,11 +116,11 @@ The pursuit of mastery is never finished.
     <h2>MORE SAGAS TO COME</h2>
 
     <p>
-    The archive is still being forged.
+        The archive is still being forged.
     </p>
 
     <p>
-    The next saga has yet to be written.
+        The next saga has yet to be written.
     </p>
 
 </div>
@@ -119,12 +132,10 @@ The horizon remains unseen.
 </p>
 
 <div class="oars-image">
-    Crossed oars.png
+    Crossed%20oars.png
 </div>
 
-<br>
-
-index.html
+<a href="index.html" class="return-button">
     Return To The Foundry
 </a>
 
