@@ -52,10 +52,32 @@ a{
     text-decoration:none;
 }
 
-.longship{
-    font-size:4em;
-    opacity:.4;
-    margin-top:40px;
+.longship-silhouette{
+    max-width:500px;
+    margin:40px auto;
+    opacity:.35;
+}
+
+.longship-silhouette svg{
+    width:100%;
+    height:auto;
+
+    filter:
+        drop-shadow(
+            0 0 10px rgba(212,136,6,.25)
+        );
+}
+
+.longship-silhouette path,
+.longship-silhouette line{
+
+    fill:#050505;
+    stroke:#d48806;
+
+    stroke-width:5;
+
+    stroke-linecap:round;
+    stroke-linejoin:round;
 }
 
 .voyage{
@@ -135,7 +157,7 @@ The voyage continues.
 
 <br><br>
 
-index.htmlReturn To The Foundry</a>
+<a href="index.html">Returnndry</a>
 
 </body>
 
