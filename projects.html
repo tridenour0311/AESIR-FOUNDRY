@@ -1,128 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Project Archive | Aesir Foundry</title>
+<title>Aesir Foundry | Project Archive</title>
 
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#d97706">
-    <link rel="icon" href="Aesir-Foundry.png">
+manifest.json
 
-    <style>
-        body {
-            color: white;
-            text-align: center;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 50px;
-            min-height: 100vh;
-            background:
-                radial-gradient(circle at 0% 50%,
-                rgba(255,120,0,.20),
-                transparent 30%),
+<meta name="theme-color" content="#d97706">
 
-                radial-gradient(circle at 100% 50%,
-                rgba(255,120,0,.20),
-                transparent 30%),
+<style>
 
-                radial-gradient(circle at 50% 100%,
-                rgba(255,70,0,.15),
-                transparent 25%),
+body{
+    margin:0;
+    background:#000;
+    color:white;
+    font-family:Arial, sans-serif;
+    text-align:center;
+}
 
-                #000;
-        }
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 20px;
+}
 
-        .container {
-            max-width: 850px;
-            margin: 0 auto;
-        }
+.logo{
+    width:450px;
+    max-width:90%;
+    display:block;
+    margin:0 auto 30px auto;
+}
 
-        .logo {
-            max-width: 260px;
-            width: 100%;
-            height: auto;
-            margin-bottom: 35px;
-        }
+h1{
+    color:#d97706;
+    font-size:3rem;
+    letter-spacing:6px;
+    margin-bottom:20px;
+}
 
-        h1 {
-            color: #d97706;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            font-size: 2.8rem;
-            margin-bottom: 45px;
-        }
+.archive-text{
+    font-size:1.4rem;
+    color:#d0d0d0;
+    margin-bottom:15px;
+}
 
-        p {
-            line-height: 1.8;
-            font-size: 1.15rem;
-            margin-bottom: 28px;
-        }
+.archive-sub{
+    color:#888;
+    line-height:1.8;
+    margin-bottom:30px;
+}
 
-        .voyage {
-            margin-top: 48px;
-            margin-bottom: 35px;
-            font-style: italic;
-            color: #aaa;
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
+.oars{
+    width:230px;
+    max-width:70%;
+    display:block;
+    margin:30px auto;
+    opacity:0.95;
+}
 
-        .return-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 26px;
-            border: 2px solid #d97706;
-            border-radius: 6px;
-            text-decoration: none;
-            color: white;
-            font-size: 1rem;
-            letter-spacing: 1px;
-            transition: 0.3s ease;
-        }
+.button{
+    display:inline-block;
+    background:#d97706;
+    color:white;
+    text-decoration:none;
+    padding:15px 30px;
+    border-radius:6px;
+    font-weight:bold;
+    margin:10px;
+}
 
-        .return-button:hover {
-            background: #d97706;
-            color: black;
-        }
-    </style>
+.button:hover{
+    background:#f59e0b;
+}
+
+#installBtn{
+    display:none;
+}
+
+footer{
+    margin-top:50px;
+    color:#666;
+    font-size:.9rem;
+}
+
+</style>
 </head>
 
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <img src="Aesir-Foundry.png">
+Aesir-Foundry.png
 
-        <h1>More Sagas To Come</h1>
+<h1>MORE SAGAS TO COME</h1>
 
-        <p>The archive is still being forged.</p>
+<div class="archive-text">
+The archive is still being forged.
+</div>
 
-        <p>The next saga has yet to be written.</p>
+<div class="archive-sub">
+The next saga has yet to be written.<br><br>
+The voyage continues.<br>
+The horizon remains unseen.
+</div>
 
-        <div class="voyage">
-            The voyage continues.<br>
-            The horizon remains unseen.
-        </div>
+Crossed-oars.png
 
-        <a href="index.html" class="return-button">
-            Return To The Foundry
-        </a>
+<br>
 
-    </div>
+index.html
+Return To The Foundry
+</a>
 
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./service-worker.js')
-                    .then(() => console.log('Aesir Foundry PWA Ready'))
-                    .catch(err => console.log(err));
-            });
-        }
-    </script>
+<br>
+
+<button id="installBtn" class="button">
+Install Aesir Foundry App
+</button>
+
+<footer>
+Forged With Purpose
+</footer>
+
+</div>
+
+<script>
+
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+
+    e.preventDefault();
+
+    deferredPrompt = e;
+
+    document.getElementById("installBtn")
+        .style.display = "inline-block";
+});
+
+document.getElementById("installBtn")
+.addEventListener("click", async () => {
+
+    if (!deferredPrompt) return;
+
+    deferredPrompt.prompt();
+
+    await deferredPrompt.userChoice;
+
+});
+
+if ('serviceWorker' in navigator) {
+
+    navigator.serviceWorker.register('service-worker.js');
+
+}
+
+</script>
 
 </body>
-
 </html>
