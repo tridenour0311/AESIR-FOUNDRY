@@ -1,1 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aesir Foundry | Project Archive</title>
 
+<meta name="theme-color" content="#d97706">
+
+<style>
+body{
+    margin:0;
+    background:#000;
+    color:white;
+    font-family:Arial, sans-serif;
+    text-align:center;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+h1{
+    color:#d97706;
+    font-size:3rem;
+    letter-spacing:6px;
+    margin-bottom:20px;
+}
+
+.archive-text{
+    font-size:1.4rem;
+    color:#d0d0d0;
+    margin-bottom:15px;
+}
+
+.archive-sub{
+    color:#888;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.oars{
+    width:230px;
+    max-width:70%;
+    display:block;
+    margin:30px auto;
+    opacity:0.95;
+}
+
+.button{
+    display:inline-block;
+    background:#d97706;
+    color:white;
+    text-decoration:none;
+    padding:15px 30px;
+    border-radius:6px;
+    font-weight:bold;
+    margin:10px;
+}
+
+.button:hover{
+    background:#f59e0b;
+}
+
+#installBtn{
+    display:none;
+}
+
+footer{
+    margin-top:50px;
+    color:#666;
+    font-size:.9rem;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>MORE SAGAS TO COME</h1>
+
+<div class="archive-text">
+The archive is still being forged.
+</div>
+
+<div class="archive-sub">
+The next saga has yet to be written.<br><br>
+The voyage continues.<br>
+The horizon remains unseen.
+</div>
+
+Crossed-oars.png
+
+<a href="index.html" class="button">
+Return To The Foundry
+</a>
+
+<br>
+
+<button id="installBtn" class="button">
+Install Aesir Foundry App
+</button>
+
+<footer>
+Forged With Purpose
+</footer>
+
+</div>
+
+<script>
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    document.getElementById("installBtn").style.display = "inline-block";
+});
+
+document.getElementById("installBtn").addEventListener("click", async () => {
+    if (!deferredPrompt) return;
+    deferredPrompt.prompt();
+    await deferredPrompt.userChoice;
+});
+
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js');
+}
+</script>
+
+</body>
+</html>
