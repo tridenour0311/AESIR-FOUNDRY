@@ -1,119 +1,124 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Project Archive | Aesir Foundry</title>
+    <title>Project Archive | Aesir Foundry</title>
 
-<style>
+    manifest.json
+    <meta name="theme-color" content="#d97706">
+    Aesir-Foundry.png
 
-body{
-    color:white;
-    text-align:center;
-    font-family:Arial, sans-serif;
-    padding:50px;
-    margin:0;
+    <style>
 
-    background:
-        radial-gradient(circle at 0% 50%,
-        rgba(255,120,0,.20),
-        transparent 30%),
+        body {
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 50px;
 
-        radial-gradient(circle at 100% 50%,
-        rgba(255,120,0,.20),
-        transparent 30%),
+            background:
+                radial-gradient(circle at 0% 50%,
+                rgba(255,120,0,.20),
+                transparent 30%),
 
-        radial-gradient(circle at 50% 100%,
-        rgba(255,70,0,.15),
-        transparent 25%),
+                radial-gradient(circle at 100% 50%,
+                rgba(255,120,0,.20),
+                transparent 30%),
 
-        #000;
-}
+                radial-gradient(circle at 50% 100%,
+                rgba(255,70,0,.15),
+                transparent 25%),
 
-h1{
-    color:#d48806;
-    letter-spacing:2px;
-}
+                #000;
+        }
 
-h2{
-    color:white;
-}
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
 
-p{
-    line-height:1.8;
-}
+        .logo {
+            max-width: 300px;
+            width: 100%;
+            margin-bottom: 30px;
+        }
 
-.card{
-    background:#111;
-    border:1px solid #d48806;
-    border-radius:12px;
-    padding:25px;
-    margin:25px auto;
-    max-width:800px;
+        h1 {
+            color: #d97706;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
 
-    box-shadow:
-        0 0 15px rgba(212,136,6,.20),
-        inset 0 0 10px rgba(255,255,255,.03);
-}
+        p {
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
 
-.voyage{
-    color:#d48806;
-    font-style:italic;
-    margin-top:25px;
-}
+        .return-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            text-decoration: none;
+            color: white;
+            border: 2px solid #d97706;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
 
-.oars-image{
-    margin:35px auto;
-}
+        .return-button:hover {
+            background: #d97706;
+            color: black;
+        }
 
-.oars-image img{
-    width:180px;
-    max-width:50%;
-    height:auto;
-    opacity:.85;
-}
+        .voyage {
+            margin-top: 40px;
+            font-style: italic;
+            color: #999;
+        }
 
-.return-button{
-    display:inline-block;
-    margin-top:25px;
-    padding:14px 28px;
-    border:1px solid #d48806;
-    border-radius:10px;
-    color:#d48806;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-.return-button:hover{
-    background:#d48806;
-    color:black;
-}
-
-</style>
-
+    </style>
 </head>
 
 <body>
 
-<h1>PROJECT ARCHIVE</h1>
+    <div class="container">
 
-<p>
-The pursuit of mastery is never finished.
-</p>
+        Aesir-Foundry.png
 
-<div class="card">
+        <h1>More Sagas To Come</h1>
 
-<h2>MORE SAGAS TO COME</h2>
+        <p>
+            The archive is still being forged.
+        </p>
 
-<p>
-The archive is still being forged.
-</p>
+        <p>
+            The next saga has yet to be written.
+        </p>
 
-<a href="index.html" class="return-button">
-Return To The Foundry
-</a>
+        <div class="voyage">
+            The voyage continues.<br>
+            The horizon remains unseen.
+        </div>
 
-</div>    
+        index.html
+            Return To The Foundry
+        </a>
+
+    </div>
+
+    <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('./service-worker.js')
+                .then(() => console.log('Aesir Foundry PWA Ready'))
+                .catch(err => console.log(err));
+        });
+    }
+    </script>
 
 </body>
 
