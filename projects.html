@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,9 @@
     <title>Project Archive | Aesir Foundry</title>
 
     <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#d97706">
-<link rel="icon" href="Aesir-Foundry.png">
+    <meta name="theme-color" content="#d97706">
+    <link rel="icon" href="Aesir-Foundry.png">
+
     <style>
         body {
             color: white;
@@ -16,6 +18,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 50px;
+            min-height: 100vh;
             background:
                 radial-gradient(circle at 0% 50%,
                 rgba(255,120,0,.20),
@@ -33,42 +36,51 @@
         }
 
         .container {
-            max-width: 800px;
-            margin: auto;
+            max-width: 850px;
+            margin: 0 auto;
         }
 
         .logo {
-            max-width: 250px;
+            max-width: 260px;
             width: 100%;
-            margin-bottom: 25px;
+            height: auto;
+            margin-bottom: 35px;
         }
 
         h1 {
             color: #d97706;
-            letter-spacing: 4px;
+            letter-spacing: 5px;
             text-transform: uppercase;
+            font-size: 2.8rem;
+            margin-bottom: 45px;
         }
 
         p {
             line-height: 1.8;
-            font-size: 1.1em;
+            font-size: 1.15rem;
+            margin-bottom: 28px;
         }
 
         .voyage {
-            margin-top: 40px;
+            margin-top: 48px;
+            margin-bottom: 35px;
             font-style: italic;
-            color: #999;
+            color: #aaa;
+            font-size: 1.1rem;
+            line-height: 1.6;
         }
 
         .return-button {
             display: inline-block;
-            margin-top: 30px;
-            padding: 12px 24px;
+            margin-top: 20px;
+            padding: 12px 26px;
             border: 2px solid #d97706;
             border-radius: 6px;
             text-decoration: none;
             color: white;
-            transition: 0.3s;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            transition: 0.3s ease;
         }
 
         .return-button:hover {
@@ -80,35 +92,37 @@
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <img src="Aesir-Foundry.png">
-    <h1>MORE SAGAS TO COME</h1>
+        <img src="Aesir-Foundry.png">
 
-    <p>The archive is still being forged.</p>
+        <h1>More Sagas To Come</h1>
 
-    <p>The next saga has yet to be written.</p>
+        <p>The archive is still being forged.</p>
 
-    <div class="voyage">
-        The voyage continues.<br>
-        The horizon remains unseen.
+        <p>The next saga has yet to be written.</p>
+
+        <div class="voyage">
+            The voyage continues.<br>
+            The horizon remains unseen.
+        </div>
+
+        <a href="index.html" class="return-button">
+            Return To The Foundry
+        </a>
+
     </div>
 
-   <a href="index.html" class="return-button">
-    Return To The Foundry
-</a>
-
-</div>
-
-<script>
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./service-worker.js')
-            .then(() => console.log('Aesir Foundry PWA Ready'))
-            .catch(err => console.log(err));
-    });
-}
-</script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./service-worker.js')
+                    .then(() => console.log('Aesir Foundry PWA Ready'))
+                    .catch(err => console.log(err));
+            });
+        }
+    </script>
 
 </body>
+
 </html>
