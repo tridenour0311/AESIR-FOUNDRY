@@ -3,78 +3,122 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Project Archive | Aesir Foundry</title>
+<title>Aesir Foundry | Project Archive</title>
+
+<meta name="theme-color" content="#d97706">
 
 <style>
 body{
+    margin:0;
     background:#000;
-    color:#d9d9d9;
+    color:white;
     font-family:Arial,sans-serif;
     text-align:center;
-    padding:80px 20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 20px;
 }
 
 h1{
     color:#d97706;
-    font-size:4rem;
-    letter-spacing:4px;
+    font-size:3rem;
+    letter-spacing:6px;
+    margin-bottom:20px;
 }
 
-.subtitle{
-    font-size:2rem;
-    margin-bottom:40px;
+.archive-text{
+    font-size:1.4rem;
+    color:#d0d0d0;
+    margin-bottom:15px;
 }
 
-.text{
-    font-size:1.25rem;
-    line-height:2;
-    color:#999;
+.archive-sub{
+    color:#888;
+    line-height:1.8;
+    margin-bottom:30px;
 }
 
-.return-button{
+.button{
     display:inline-block;
-    margin-top:40px;
-    padding:15px 30px;
     background:#d97706;
     color:white;
     text-decoration:none;
+    padding:15px 30px;
     border-radius:6px;
     font-weight:bold;
+    margin:10px;
 }
 
-.return-button:hover{
+.button:hover{
     background:#f59e0b;
 }
 
-.footer{
-    margin-top:80px;
+#installBtn{
+    display:none;
+}
+
+footer{
+    margin-top:50px;
     color:#666;
+    font-size:.9rem;
 }
 </style>
 </head>
+
 <body>
+
+<div class="container">
 
 <h1>MORE SAGAS TO COME</h1>
 
-<div class="subtitle">
+<div class="archive-text">
 The archive is still being forged.
 </div>
 
-<div class="text">
-The next saga has yet to be written.
-<br><br>
-The voyage continues.
-<br>
+<div class="archive-sub">
+The next saga has yet to be written.<br><br>
+The voyage continues.<br>
 The horizon remains unseen.
 </div>
 
-index.html
+<a href="index.html" class="button">
 Return To The Foundry
 </a>
 
-<div class="footer">
+<br>
+
+<button id="installBtn" class="button">
+Install Aesir Foundry App
+</button>
+
+<footer>
 Forged With Purpose
+</footer>
+
 </div>
+
+<script>
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    document.getElementById("installBtn").style.display = "inline-block";
+});
+
+document.getElementById("installBtn").addEventListener("click", async () => {
+    if (!deferredPrompt) return;
+    deferredPrompt.prompt();
+    await deferredPrompt.userChoice;
+});
+
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js');
+}
+</script>
 
 </body>
 </html>
