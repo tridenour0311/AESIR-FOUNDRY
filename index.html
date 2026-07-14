@@ -172,43 +172,15 @@
 <br>
 
 <br><br>
-
-<button id="installBtn" class="btn" style="display:none;">
-    INSTALL THE APP
-</button>
    
-</p>
-<script>
-let deferredPrompt;
 
-window.addEventListener('beforeinstallprompt', (e) => {
-
-    e.preventDefault();
-
-    deferredPrompt = e;
-
-    const installBtn = document.getElementById('installBtn');
-
-    installBtn.style.display = 'inline-block';
-
-    installBtn.addEventListener('click', async () => {
-
-        deferredPrompt.prompt();
-
-        const { outcome } = await deferredPrompt.userChoice;
-
-        console.log('Install result:', outcome);
-
-        deferredPrompt = null;
-    });
-});
-</script>
 <br><br>
         
-        <button class="btn"
-        onclick="window.location.href='shop.html'">
+ <button class="btn"
+        onclick="window.open('https://aesir-foundry.printify.me/products','_blank')">
     SHOP THE FORGE
 </button>
+
 
 <br><br>
 
