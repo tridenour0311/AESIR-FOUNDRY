@@ -1,25 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Aesir Foundry™ | Forged With Purpose</title>
 
-    AF Symbol.jfif
+    AF%20Symbol.jfif
 
     <style>
 
-        body{
+        *{
             margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
             color:white;
             text-align:center;
+            min-height:100vh;
 
             background:
                 radial-gradient(circle at 0% 50%,
-                rgba(255,120,0,.35),
+                rgba(255,120,0,.25),
                 transparent 30%),
 
                 radial-gradient(circle at 100% 50%,
-                rgba(255,120,0,.35),
+                rgba(255,120,0,.25),
                 transparent 30%),
 
                 radial-gradient(circle at 50% 100%,
@@ -33,196 +43,155 @@
                 inset 0 0 200px rgba(255,30,0,.08);
         }
 
-        img{
-            width:60%;
-            max-width:550px;
+        .container{
+            max-width:1200px;
+            margin:auto;
+            padding:40px 20px;
+        }
+
+        .logo{
+            width:140px;
             height:auto;
-            margin-top:30px;
+            margin-bottom:25px;
         }
 
-        .subtitle{
-            color:#d48806;
-            font-size:1.1em;
-            letter-spacing:4px;
-            text-transform:uppercase;
-            margin-top:15px;
+        .tagline{
+            color:#d88d00;
+            letter-spacing:8px;
+            font-size:1.2rem;
+            margin-bottom:50px;
         }
 
-        .content{
-            max-width:900px;
-            margin:40px auto 80px auto;
-            padding:20px;
-            font-family:Arial, Helvetica, sans-serif;
-        }
-
-        h1{
-            color:#d48806;
-            letter-spacing:2px;
-        }
-
-        h2{
-            color:#d48806;
-            margin-top:50px;
-        }
-
-        h3{
-            color:white;
-            margin-top:0;
-        }
-
-        p{
+        .values{
+            color:#d88d00;
+            letter-spacing:6px;
+            font-size:1rem;
+            margin-bottom:120px;
             line-height:1.8;
         }
 
-        .quote{
-            font-size:1.15em;
-            font-style:italic;
-            max-width:800px;
-            margin:20px auto;
-        }
-
-        .journey{
-            color:#d48806;
-            font-weight:bold;
-            letter-spacing:2px;
+        h1{
+            color:#e79d08;
+            font-size:4rem;
             margin-bottom:40px;
+            text-transform:uppercase;
         }
 
-        .pillar{
-            background:#111;
-            border:1px solid #d48806;
-            border-radius:12px;
-            padding:25px;
-            margin:25px 0;
-
-            box-shadow:
-                0 0 15px rgba(212,136,6,.20),
-                inset 0 0 10px rgba(255,255,255,.03);
+        .statement{
+            font-size:2rem;
+            font-style:italic;
+            max-width:1100px;
+            margin:0 auto 40px auto;
+            line-height:1.7;
         }
 
-        hr{
-            border:none;
-            height:1px;
-            background:#333;
-            margin:60px 0 30px 0;
+        .quote{
+            color:#e79d08;
+            font-size:1.8rem;
+            font-weight:bold;
+            letter-spacing:4px;
+            margin-bottom:90px;
         }
 
-        .btn{
-            background:#111;
-            color:#d48806;
-            border:1px solid #d48806;
-            padding:15px 30px;
-            border-radius:10px;
-            cursor:pointer;
-            font-size:16px;
+        .button{
+            display:inline-block;
+            padding:22px 50px;
+            border:2px solid #d88d00;
+            border-radius:20px;
+
+            color:#d88d00;
+            text-decoration:none;
+
+            font-size:1.8rem;
             font-weight:bold;
 
-            box-shadow:
-                0 0 15px rgba(212,136,6,.25),
-                inset 0 0 10px rgba(255,255,255,.03);
+            background:rgba(255,255,255,.02);
 
-            transition:all 0.3s ease;
+            box-shadow:
+                0 0 15px rgba(255,120,0,.2),
+                0 0 35px rgba(255,120,0,.15);
+
+            transition:all .3s ease;
         }
 
-        .btn:hover{
-            background:#d48806;
+        .button:hover{
+            background:#d88d00;
             color:black;
             transform:scale(1.05);
-
-            box-shadow:
-                0 0 25px rgba(212,136,6,.5);
         }
 
-        .footer{
-            color:#777;
-            letter-spacing:2px;
-            padding-bottom:40px;
+        footer{
+            margin-top:120px;
+            padding-bottom:50px;
+            color:#888;
+            font-size:.9rem;
+        }
+
+        @media(max-width:768px){
+
+            h1{
+                font-size:2.5rem;
+            }
+
+            .statement{
+                font-size:1.3rem;
+            }
+
+            .quote{
+                font-size:1.2rem;
+            }
+
+            .values{
+                font-size:.9rem;
+                letter-spacing:3px;
+            }
+
+            .tagline{
+                letter-spacing:4px;
+            }
+
+            .button{
+                font-size:1.2rem;
+                padding:18px 35px;
+            }
         }
 
     </style>
-
 </head>
 
 <body>
 
-    AF Symbol.jfif
+    <div class="container">
 
-    <p class="subtitle">
-        FORGED WITH PURPOSE™
-    </p>
+        AF%20Symbol.jfif
 
-    <p class="subtitle">
-        Honor • Craftsmanship • Responsibility • Resilience • Purpose
-    </p>
+        <div class="tagline">
+            FORGED WITH PURPOSE™
+        </div>
 
-    <div class="content">
+        <div class="values">
+            HONOR • CRAFTSMANSHIP • RESPONSIBILITY • RESILIENCE • PURPOSE
+        </div>
 
-        <h1>FORGED WITH PURPOSE</h1>
+        <h1>Forged With Purpose</h1>
 
-        <p class="quote">
+        <div class="statement">
             Excellence is forged through discipline, learning, and perseverance.
             Every skill developed, every lesson learned, and every challenge
             overcome contributes to the pursuit of mastery.
-        </p>
+        </div>
 
-        <p class="journey">
+        <div class="quote">
             The pursuit of mastery is never finished.
-        </p>
+        </div>
 
-        <br><br>
-
-        <button class="btn"
-            onclick="window.open('https://aesir-foundry.printify.me/products','_blank')">
+        <a href="shop.html" class="button">
             SHOP THE FORGE
-        </button>
+        </a>
 
-        <br><br>
-
-        <h2>The Five Pillars</h2>
-
-        <div class="pillar">
-            <h3>Honor</h3>
-            <p>Act with integrity. Keep your word. Do the right thing even when no one is watching.</p>
-        </div>
-
-        <div class="pillar">
-            <h3>Craftsmanship</h3>
-            <p>Pursue excellence in every detail. Build things correctly with skill, precision, and pride.</p>
-        </div>
-
-        <div class="pillar">
-            <h3>Responsibility</h3>
-            <p>Own the outcome. Take accountability for the work, the process, and the results.</p>
-        </div>
-
-        <div class="pillar">
-            <h3>Resilience</h3>
-            <p>Face challenges with determination. Learn from setbacks and continue moving forward.</p>
-        </div>
-
-        <div class="pillar">
-            <h3>Purpose</h3>
-            <p>Create with intention. Everything forged should have meaning and value.</p>
-        </div>
-
-        <h2>About Aesir Foundry</h2>
-
-        <p>
-            Aesir Foundry was built on the belief that meaningful work requires dedication,
-            craftsmanship, and purpose. Through continuous learning and a commitment to
-            excellence, the mission is to develop the knowledge, skills, and experience
-            necessary to create lasting, high-quality work.
-        </p>
-
-        <hr>
-
-        <p class="footer">
-            Honor • Craftsmanship • Responsibility • Resilience • Purpose
-        </p>
-
-        <p class="footer">
+        <footer>
             © 2026 Aesir Foundry™. All Rights Reserved.
-        </p>
+        </footer>
 
     </div>
 
